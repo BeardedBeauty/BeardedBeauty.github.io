@@ -99,11 +99,8 @@ a:hover {
 
 .con {
     text-align: left;
-    width: 960px;
-    float: left;
     margin-top: 20px;
-    margin-left: -480px;
-    left: 50%;
+    float: left;
     background-color: #ffffff;
     border-radius: 6px;
     padding-left: 60px;
@@ -114,6 +111,9 @@ a:hover {
     line-height: 170%;
     color: #777777;
     position: absolute;
+    width: 960px;
+    margin-left: -480px;
+    left: 50%;
 } /* content div */
 
 img.reg {
@@ -232,4 +232,21 @@ input[type=text]:focus {
     padding: 6px;
     color: grey;
     text-decoration: none;
+}
+
+/* media queries */
+
+
+@media screen and (max-width: 768px) and (min-width: 641px){
+    .con {
+        width: 600px;
+        margin-left: -300px;
+    }
+}
+
+@media screen and (max-width: 640px){
+    .con {
+        width: 500px;
+        margin-left: -250px;
+    }
 }
