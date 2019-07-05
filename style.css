@@ -119,9 +119,6 @@ a:hover {
 img.reg {
     width: 250px;
     height: auto;
-    margin-right: 70px;
-    margin-left: 20px;
-    margin-bottom: 40px;
     float: left;
 } /* image specifics */
 
@@ -133,7 +130,7 @@ img.bet {
     float: left;
 } /* image specifics */
 
-img.push {
+.push {
     margin-right: 500px;
     width: 250px;
     height: auto;
@@ -151,9 +148,6 @@ img.push {
     text-align: center;
     color: #ffffff;
     float: left;
-    margin-right: 70px;
-    margin-left: 20px;
-    padding-top: 6px;
 }
 
 .end {
@@ -232,6 +226,13 @@ input[type=text]:focus {
     padding: 6px;
     color: grey;
     text-decoration: none;
+}
+
+.concon {
+    width: 250px;
+    float: left;
+    margin-right: 70px;
+    margin-bottom: 50px;
 }
 
 /* media queries */
