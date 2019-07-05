@@ -242,11 +242,20 @@ input[type=text]:focus {
         width: 600px;
         margin-left: -300px;
     }
+    #titlebox {
+        margin-left: 0%;
+    }
 }
 
 @media screen and (max-width: 640px){
     .con {
         width: 500px;
         margin-left: -250px;
+    }
+    #titlebox {
+        margin-left: 0%;
+    }
+    .link {
+        margin-left: 50%;
     }
 }
