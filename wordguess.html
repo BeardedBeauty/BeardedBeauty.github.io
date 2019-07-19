@@ -22,6 +22,7 @@
 	<br>
 	<p>guesses left:</p>
 	<p id="sadness"></p>
+
 	<script>
 		var wds = ["rectangle", "pistachio", "excuse", "dictate", "mushroom", "suspenders", "guacamole", "sad", "marble", "communism", "stupid", "citrus", "ion", "northwest", "combine", "regenerate", "taconite", "vape", "stardust", "guinea", "hatchet", "cardboard", "ecstasy", "getelementbyid", "cactus", "pickle",];
 		var pick;
@@ -34,6 +35,7 @@
 		var wrong;
 		var answer = [];
 		var stp;
+		var wins = 0;
 
 		function startme() {
 			pick = wds[Math.floor(Math.random() * wds.length)];
@@ -58,7 +60,28 @@
 		}
 
 		function winme() {
-			alert("you win, stupid");
+			alert("you win, neat!");
+			answer = [];
+			
+			pick = wds[Math.floor(Math.random() * wds.length)];
+			stp = pick.length;
+			for (var q = 0; q < pick.length; q++) {
+				answer[q] = "_";
+			}
+
+			p1.text(answer.join(" "));
+			word.append(p1);
+			console.log(pick);
+
+			p3.text(stp);
+			numb.append(p3);
+			console.log(stp);
+
+			wrong = [];
+			p2.text(wrong.join(" "));
+			score.append(p2);
+			leg = pick.length;
+			console.log(leg);
 		}
 
 		startme();
@@ -75,18 +98,18 @@
 				return
 			}
 
-			if (answer === pick) {
-				winme();
-			}
-
 			for (var w = 0; w < pick.length; w++) {// guess right
 				if (pick[w] === inp) {
 					answer[w] = inp;
 					donewiththisstupidjs = true;
-					console.log(answer.join(" "));
+					console.log(answer);
 					p1.text(answer.join(" "));
 					word.append(p1);
-					console.log(leg);
+					var none = answer.join("");
+					console.log(none)
+					if (pick === none) {
+						winme();
+					}
 				}
 			}
 			if (donewiththisstupidjs) { return };
