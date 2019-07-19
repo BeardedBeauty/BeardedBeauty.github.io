@@ -8,7 +8,7 @@
 
 body {
     background-color: #ffffff;
-    background-image: url("images/ep_naturalwhite.png");
+    background-image: url("../../images/ep_naturalwhite.png");
     background-repeat: repeat;
 }
 
@@ -86,6 +86,17 @@ a:hover {
     border-radius: 6px;
 }
 
+.port {
+    padding-left: 3px;
+    padding-top: 4px;
+    padding-right: 3px;
+    color:#ffffff;
+}
+
+.port:hover {
+    color: #ffffff;
+}
+
 .pl {
     float: left;
     padding: 3px;
@@ -161,6 +172,7 @@ img.bet {
     text-align: center;
     color: #ffffff;
     float: left;
+    padding-top: 6px;
 }
 
 .box:hover {

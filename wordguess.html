@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+	<html lang="en-us">
+	
+	<head>
+	    <meta charset="UTF-8">
+	    <title>#</title>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	</head>
+	<style>
+	    #answer {
+	        float: left;
+	    }
+	</style>
+	
+	<body>
+	    <p>wordguess, dude. i got a lotta weird words, better guess creatively</p>
+	    <br>
+	    <p id="word"></p>
+	    <br>
+	    <p>wrong letters:</p>
+	    <p id="score"></p>
+	    <br>
+	    <p>guesses left:</p>
+	    <p id="sadness"></p>
+	    <script>
+	        var wds = ["rectangle", "pistachio", "excuse", "dictate", "mushroom", "suspenders", "guacamole", "sad", "marble", "communism", "stupid", "citrus", "ion", "northwest", "combine", "regenerate", "taconite", "vape", "stardust", "guinea", "hatchet", "cardboard", "ecstasy", "getelementbyid", "cactus",];
+	        var pick = wds[Math.floor(Math.random() * wds.length)];
+	        var word = $("#word");
+	        var score = $("#score");
+	        var numb = $("#sadness")
+	        var p1 = $("<p>");
+	        var p2 = $("<p>");
+	        var p3 = $("<p>");
+	        var wrong = [];
+	        var answer = [];
+	        var stp = pick.length;
+	        for (var q = 0; q < pick.length; q++) {
+	            answer[q] = "_";
+	        }
+	        p1.text(answer.join(" "));
+	        word.append(p1);
+	        console.log(pick);
+	        p3.text(stp);
+	        numb.append(p3);
+	        console.log(stp);
+	        document.onkeyup = function (event) {
+	
+	            if (stp === 0) {
+	                var pick2 = wds[Math.floor(Math.random() * wds.length)];
+	                p1.text(answer.join(" "));
+	                word.append(p1);
+	                console.log(pick2);
+	                return
+	            }
+	
+	            var inp = event.key.toLowerCase();
+	            var donewiththisstupidjs = false;
+	            for (var w = 0; w < pick.length; w++) {
+	                if (pick[w] === inp) {
+	                    answer[w] = inp;
+	                    donewiththisstupidjs = true;
+	                    console.log(answer.join(" "));
+	                    p1.text(answer.join(" "));
+	                    word.append(p1);
+	                }
+	            }
+	            if (donewiththisstupidjs) { return };
+                var inp2 = event.key.toUpperCase();
+	            if (wrong.indexOf(answer) < 0) {
+	                wrong.push(inp2)
+	                p2.text(wrong.join(" "));
+	                score.append(p2);
+	                stp--;
+	                p3.text(stp);
+	                numb.append(p3);
+	                console.log(stp);
+	            }
+	        }
+	    </script>
+	</body>
+	
+	</html> 
