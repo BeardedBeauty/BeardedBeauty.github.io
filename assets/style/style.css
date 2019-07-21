@@ -335,6 +335,16 @@ textarea {
     float: left;
     padding-left:105px;
 }
+
+#win {
+    float: left;
+    margin-left: 20px;
+}
+
+#lose {
+    float: right;
+    margin-right: 20px;
+}
 /* media queries */
 
 

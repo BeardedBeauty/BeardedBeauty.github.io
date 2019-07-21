@@ -7,8 +7,12 @@ window.onload = function () {
 
 var p1 = $("<p>");
 var p2 = $("<p>");
-var match = $("#match")
-var numb = $("#maker")
+var pw = $("<p>");
+var pl = $("<p>");
+var match = $("#match");
+var numb = $("#maker");
+var w = $("#wins");
+var l = $("#loss");
 var matchInt;
 var whatsg;
 var gems = [0, 0, 0, 0];
@@ -30,6 +34,11 @@ function reset() {
         gems[q] = random();
     }
     console.log(gems)
+
+    pw.text(wins)
+    w.append(pw);
+    pl.text(losses)
+    l.append(pl);
 }
 
 function random() {
@@ -39,14 +48,14 @@ function random() {
 
 function dance() {
     if (score === matchInt) {
+        wins++;
         alert("whoa dude, you won!")
         reset();
-        wins++;
     }
     else if (score > matchInt) {
+        losses++;
         alert("now now, coulda done better, sad.")
         reset();
-        losses++;
     }
 }
 
