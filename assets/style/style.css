@@ -296,7 +296,7 @@ textarea {
     height: 400px;
 }
 
-#gemtitle {
+.gemtitle {
     background-color: #4aaaa5;
     width: 100%;
     padding-top: 6px ;
@@ -310,17 +310,22 @@ textarea {
     width: 20px;
     height: 20px;
     border-radius: 6px;
-    border: 1px solid #ffffff;
-    padding: 0px;
-    left: 50%;
-    margin-left: 245px;
+    border: 1px solid #777777;
+    color: #4aaaa5;
+    text-align: center;
+    width: 50px;
+    height: 25px;
+    margin-top: 20px;
+    float: left;
+    margin-left: 225px;
+    margin-right: 225px;
 }
 
 .gems {
     float: left;
     border: 1px solid #777777;
     border-radius: 6px;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-right: 6px;
 }
 

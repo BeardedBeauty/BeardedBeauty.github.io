@@ -6,18 +6,23 @@ window.onload = function () {
 };
 
 var p1 = $("<p>");
+var p2 = $("<p>");
 var match = $("#match")
 var numb = $("#maker")
-var matchInt = Math.floor(Math.random() * (121 - 19)) + 19;
+var matchInt;
 var whatsg;
 var gems = [0, 0, 0, 0];
-var score = 0;
+var score;
+var wins = 0;
+var losses = 0;
 
 function reset() {
+    matchInt = Math.floor(Math.random() * (121 - 19)) + 19;
     console.log(matchInt)
-    p1.text(matchInt)
-    match.append(p1);
+    p2.text(matchInt)
+    match.append(p2);
 
+    score = 0;
     p1.text(score)
     numb.append(p1);
 
@@ -32,11 +37,25 @@ function random() {
     return whatsg;
 }
 
+function dance() {
+    if (score === matchInt) {
+        alert("whoa dude, you won!")
+        reset();
+        wins++;
+    }
+    else if (score > matchInt) {
+        alert("now now, coulda done better, sad.")
+        reset();
+        losses++;
+    }
+}
+
 function org() {
     console.log(gems[0])
     score = score + gems[0]
     p1.text(score)
     numb.append(p1);
+    dance();
 }
 
 function prl() {
@@ -44,6 +63,7 @@ function prl() {
     score = score + gems[1]
     p1.text(score)
     numb.append(p1);
+    dance();
 }
 
 function blu() {
@@ -51,6 +71,7 @@ function blu() {
     score = score + gems[2]
     p1.text(score)
     numb.append(p1);
+    dance();
 }
 
 function grn() {
@@ -58,6 +79,7 @@ function grn() {
     score = score + gems[3]
     p1.text(score)
     numb.append(p1);
+    dance();
 }
 
 reset();
