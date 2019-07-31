@@ -1,8 +1,9 @@
 window.onload = function () {
-    $(".1").on("click", org);
-    $(".2").on("click", prl);
-    $(".3").on("click", blu);
-    $(".4").on("click", grn);
+    $(".1").on("click", button[0]);
+    $(".2").on("click", button[1]);
+    $(".3").on("click", button[3]);
+    $(".4").on("click", button[4]);
+    return
 };
 
 var p1 = $("<p>");
@@ -19,6 +20,7 @@ var gems = [0, 0, 0, 0];
 var score;
 var wins = 0;
 var losses = 0;
+
 
 function reset() {
     matchInt = Math.floor(Math.random() * (121 - 19)) + 19;
@@ -49,14 +51,28 @@ function random() {
 function dance() {
     if (score === matchInt) {
         wins++;
+        score = 0;
+        p1.text(score)
+        numb.append(p1);
         alert("whoa dude, you won!")
         reset();
     }
     else if (score > matchInt) {
         losses++;
+        score = 0;
+        p1.text(score)
+        numb.append(p1);
         alert("now now, coulda done better, sad.")
         reset();
     }
+}
+
+function button() {
+    console.log(gems)
+    score = score + gems();
+    p1.text(score)
+    numb.append(p1);
+    dance();
 }
 
 function org() {
